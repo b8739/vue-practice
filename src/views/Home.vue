@@ -21,6 +21,31 @@ export default {
         setData(){
             this.input1="12345";
         }
-    }
+    },
+    //그 외 lifestyle에 따른 다양한 함수들
+    beforeCreate(){
+        console.log("beforeCreate");
+    },
+    created(){
+        console.log("created");
+    },
+    beforeMount(){
+        console.log("beforeMount");
+    },
+    mounted(){
+        console.log("mounted");
+    },
+    beforeUpdate(){
+        console.log("beforeUpdate");
+    },
+    updated(){
+        console.log("updated");
+    }, 
+    beforeDestroy(){
+        console.log("beforeDestroy");
+    }, 
+    destroyed(){
+        console.log("destroyed");
+    }, 
 }
 </script>
