@@ -4,6 +4,11 @@
         <input type="text" v-model = "input1"> <!-- Vue에서는 value -> v-model-->
         <button type="button" @click="getData">Get</button><!-- Vue에서는 onclick -> @click-->
         <button type="button" @click="setData">Set</button><!-- Vue에서는 onclick -> @click-->
+        <select class="form-control" v-model="region">
+            <option :key="index" :value="value.initial" v-for="(value,index) in options">
+                {{value.full_name}}
+            </option>
+        </select>
     </div>
 </template>
 <script>
@@ -11,7 +16,14 @@ export default {
     data(){
         return{
             title:"JX님",
-            input1: "abc"
+            input1: "abc",
+            //배열 형태의 데이터셋
+            options:[
+                {initial:"s", full_name:"Seoul"},
+                {initial:"i", full_name:"Incheon"},
+                {initial:"p", full_name:"Pohang"}
+            ],
+            region:"i"
         };
     },
     watch:{//변수 상태를 모니터링 하는 기능
