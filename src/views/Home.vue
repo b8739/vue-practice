@@ -4,11 +4,20 @@
         <input type="text" v-model = "input1"> <!-- Vue에서는 value -> v-model-->
         <button type="button" @click="getData">Get</button><!-- Vue에서는 onclick -> @click-->
         <button type="button" @click="setData">Set</button><!-- Vue에서는 onclick -> @click-->
-        <select class="form-control" v-model="region">
+        <select class="form-control" v-model="region" @change = "changeRegion">
             <option :key="index" :value="value.initial" v-for="(value,index) in options">
                 {{value.full_name}}
             </option>
         </select>
+
+        <table class="table table-bordered">
+            <tr :key="i" v-for="(d,i) in options">
+                <td>{{d.initial}}</td>
+                <td>{{d.full_name}}</td>
+            </tr>
+        </table>
+
+    
     </div>
 </template>
 <script>
@@ -37,6 +46,9 @@ export default {
         },
         setData(){
             this.input1="12345";
+        },
+        changeRegion(){
+            console.log("the region is changed");
         }
     },
     //그 외 lifestyle에 따른 다양한 함수들
