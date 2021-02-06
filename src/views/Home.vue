@@ -12,8 +12,13 @@ export default {
         return{
             title:"JX님",
             input1: "abc"
-    };
-},
+        };
+    },
+    watch:{//변수 상태를 모니터링 하는 기능
+        input1(){
+            console.log(this.input1);
+        }
+    },
     methods:{
         getData(){
             console.log(this.input1); //this를 붙여주어야 데이터에 접근 가능
@@ -23,29 +28,29 @@ export default {
         }
     },
     //그 외 lifestyle에 따른 다양한 함수들
-    beforeCreate(){
-        console.log("beforeCreate");
-    },
-    created(){
-        console.log("created");
-    },
-    beforeMount(){
-        console.log("beforeMount");
-    },
-    mounted(){
-        console.log("mounted");
-    },
-    beforeUpdate(){
-        console.log("beforeUpdate");
-    },
-    updated(){
-        console.log("updated");
-    }, 
-    beforeDestroy(){
-        console.log("beforeDestroy");
-    }, 
-    destroyed(){
-        console.log("destroyed");
-    }, 
+    // beforeCreate(){
+    //     console.log("beforeCreate");
+    // },
+    // created(){
+    //     console.log("created");
+    // },
+    // beforeMount(){
+    //     console.log("beforeMount");
+    // },
+    // mounted(){
+    //     console.log("mounted");
+    // },
+    // beforeUpdate(){
+    //     console.log("beforeUpdate");
+    // },
+    // updated(){
+    //     console.log("updated");
+    // }, 
+    // beforeDestroy(){
+    //     console.log("beforeDestroy");
+    // }, 
+    // destroyed(){
+    //     console.log("destroyed");
+    // }, 
 }
 </script>
