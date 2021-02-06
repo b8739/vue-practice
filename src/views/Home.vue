@@ -10,7 +10,7 @@
             </option>
         </select>
 
-        <table class="table table-bordered">
+        <table class="table table-bordered" v-if = "tableShow">
             <tr :key="i" v-for="(d,i) in options">
                 <td>{{d.initial}}</td>
                 <td>{{d.full_name}}</td>
@@ -33,6 +33,7 @@ export default {
                 {initial:"p", full_name:"Pohang"}
             ],
             region:"i"
+            tableShow:"false";
         };
     },
     watch:{//변수 상태를 모니터링 하는 기능
