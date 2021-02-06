@@ -1,8 +1,14 @@
 <template>
     <div>
-        <h1>Welcome to Home</h1>
+        <h1>Welcome to {{title}}</h1>
     </div>
 </template>
 <script>
-export default {};
+export default {
+    data(){
+        return{
+            title:"JX님"
+    };
+},
+}
 </script>
